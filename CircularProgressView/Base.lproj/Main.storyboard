@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CircularProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eU1-WM-25z" customClass="CircularSeekBarView" customModule="CircularProgressView" customModuleProvider="target">
+                                <rect key="frame" x="50" y="70" width="220" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eU1-WM-25z" secondAttribute="height" multiplier="1:1" id="mvX-fF-BYK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SMM-0v-va4">
+                                <rect key="frame" x="76" y="430" width="168" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we8-9W-agC">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="0.0"/>
+                                        <connections>
+                                            <action selector="setProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDW-Zs-Fav"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-y8-BWA">
+                                        <rect key="frame" x="34" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="0.25"/>
+                                        <connections>
+                                            <action selector="setProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydw-nw-Tol"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVJ-KS-U0f">
+                                        <rect key="frame" x="69" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="0.5"/>
+                                        <connections>
+                                            <action selector="setProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahP-e6-9Wp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-Tx-BHr">
+                                        <rect key="frame" x="103" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="0.75"/>
+                                        <connections>
+                                            <action selector="setProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QUo-oN-HFR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auv-gr-s8M">
+                                        <rect key="frame" x="138" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="1.0"/>
+                                        <connections>
+                                            <action selector="setProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fiP-Bh-KWu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5B-SU-HR8">
+                                <rect key="frame" x="145" y="168" width="30.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eU1-WM-25z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="4HJ-9H-Lgb"/>
+                            <constraint firstItem="SMM-0v-va4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uuj-HR-tr0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eU1-WM-25z" secondAttribute="trailing" constant="50" id="ZvP-AX-9KH"/>
+                            <constraint firstItem="eU1-WM-25z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="bGU-U4-H9q"/>
+                            <constraint firstItem="f5B-SU-HR8" firstAttribute="centerX" secondItem="eU1-WM-25z" secondAttribute="centerX" id="sm1-6a-iP5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SMM-0v-va4" secondAttribute="bottom" constant="20" id="vZk-ZK-ADO"/>
+                            <constraint firstItem="f5B-SU-HR8" firstAttribute="centerY" secondItem="eU1-WM-25z" secondAttribute="centerY" id="vps-ze-SEw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="circularProgressView" destination="eU1-WM-25z" id="v4p-eA-Gal"/>
+                        <outlet property="lblValue" destination="f5B-SU-HR8" id="jwX-Jx-zQ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
